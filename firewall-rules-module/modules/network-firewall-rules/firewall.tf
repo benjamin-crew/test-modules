@@ -41,7 +41,7 @@ resource "azurerm_firewall_policy_rule_collection_group" "firewall_collection_gr
         content {
           name = rule.value.name
           dynamic "protocols" {
-            for_each = 
+            for_each = rule.value.protocols
             content {
               type = protocols.value.type
               port = protocols.value.port

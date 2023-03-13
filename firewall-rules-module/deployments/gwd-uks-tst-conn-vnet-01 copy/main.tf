@@ -47,68 +47,67 @@ module "network-firewall-rules" {
     }
   ]
 
-  application_rule_collections = []
-  # application_rule_collections = [
-  #   {
-  #     name     = "this-is-an-application-test"
-  #     priority = 3500
-  #     action   = "Allow"
-  #     rules = [
-  #       {
-  #         name = "test app 1"
-  #         protocols = [
-  #           {
-  #             type = "Http"
-  #             port = 80
-  #           },
-  #           {
-  #             type = "Https"
-  #             port = 443
-  #           }
-  #         ]
-  #         source_addresses      = var.address_space
-  #         source_ip_groups      = null
-  #         destination_addresses = ["*"]
-  #         destination_urls = null
-  #         destination_fqdns = null
-  #         destination_fqdns_tags     = null
-  #       },
-  #       {
-  #         name = "test app 2"
-  #         protocols = [
-  #           {
-  #             type = "Https"
-  #             port = 443
-  #           }
-  #         ]
-  #         source_addresses      = var.address_space
-  #         source_ip_groups      = null
-  #         destination_addresses = null
-  #         destination_urls = null
-  #         destination_fqdns = null
-  #         destination_fqdns_tags     = ["HDInsight"]
-  #       },
-  #       {
-  #         name = "test app 3"
-  #         protocols = [
-  #           {
-  #             type = "Https"
-  #             port = 443
-  #           }
-  #         ]
-  #         source_addresses      = var.address_space
-  #         source_ip_groups      = null
-  #         destination_addresses = null
-  #         destination_urls = null
-  #         destination_fqdns = [
-  #           "psg-prod-eastus.azureedge.net,az818661.vo.msecnd.net",
-  #           "psg-prod-centralus.azureedge.net,onegetcdn.azureedge.net",
-  #           "*.powershellgallery.com,go.microsoft.com",
-  #           "devopsgallerystorage.blob.core.windows.net"
-  #         ]
-  #         destination_fqdns_tags     = null
-  #       }
-  #     ]
-  #   }
-  # ]
+  application_rule_collections = [
+    {
+      name     = "this-is-an-application-test"
+      priority = 3500
+      action   = "Allow"
+      rules = [
+        {
+          name = "test app 1"
+          protocols = [
+            {
+              type = "Http"
+              port = 80
+            },
+            {
+              type = "Https"
+              port = 443
+            }
+          ]
+          source_addresses      = var.address_space
+          source_ip_groups      = null
+          destination_addresses = ["*"]
+          destination_urls = null
+          destination_fqdns = null
+          destination_fqdns_tags     = null
+        },
+        {
+          name = "test app 2"
+          protocols = [
+            {
+              type = "Https"
+              port = 443
+            }
+          ]
+          source_addresses      = var.address_space
+          source_ip_groups      = null
+          destination_addresses = null
+          destination_urls = null
+          destination_fqdns = null
+          destination_fqdns_tags     = ["HDInsight"]
+        },
+        {
+          name = "test app 3"
+          protocols = [
+            {
+              type = "Https"
+              port = 443
+            }
+          ]
+          source_addresses      = var.address_space
+          source_ip_groups      = null
+          destination_addresses = null
+          destination_urls = null
+          destination_fqdns = [
+            "psg-prod-eastus.azureedge.net,az818661.vo.msecnd.net",
+            "psg-prod-centralus.azureedge.net,onegetcdn.azureedge.net",
+            "*.powershellgallery.com,go.microsoft.com",
+            "devopsgallerystorage.blob.core.windows.net"
+          ]
+          destination_fqdns_tags     = null
+        }
+      ]
+    }
+  ]
 }
